@@ -1,0 +1,15 @@
+
+<div class="outer-wrap">
+<h3 class="">List of Stoies</h3>
+<div class="story-list-wrap">
+<div class="story-list" *ngFor="let stories of stortList">
+    <div>Story Name : {{stories.storyName}}</div>
+    <div> Story Points : {{stories.storyPoints}}</div>
+    <div>Story Description : {{stories.storyDescription}}</div>
+</div>
+</div>
+<div *ngIf="stortList.length <=0">
+<span class="no-data">No Stories Found</span>
+</div>
+</div>
+

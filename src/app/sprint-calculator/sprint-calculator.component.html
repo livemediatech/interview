@@ -1,0 +1,17 @@
+<div>
+    <mat-dialog-content class="dialog-content">
+    <mat-form-field appearance="fill" class="input-field">
+        <label>Sprint Name</label>
+        <input matInput [(ngModel)]="sprintName" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="input-field">
+        <label>Total Sprint Size</label>
+        <input matInput [(ngModel)]="totalPoints" />
+      </mat-form-field>
+      
+      </mat-dialog-content>
+
+      <button (click)="generateAutoSprint()">Generate Sprint</button>
+      <button (click)="clearAll()">Clear Stories</button>
+      <button (click)="clearStories()">Clear Selected Stories</button>
+</div>

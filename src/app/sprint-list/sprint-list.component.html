@@ -1,0 +1,14 @@
+<div *ngFor="let sprintitem of sprintList">
+    <div> Story Name: {{sprintitem.storyName}}
+
+    </div>
+    <div> Story Points: {{sprintitem.storyPoints}}
+
+    </div>
+    <div> Story Description: {{sprintitem.storyDescription}}
+
+    </div>
+
+</div>
+
+<div *ngIf="sprintList.length<0"> No Data found</div>

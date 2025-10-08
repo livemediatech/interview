@@ -1,0 +1,14 @@
+
+
+<div class="wrap">
+    <form class="form-class" [formGroup]="storyForm" (ngSubmit)="addStory()">
+            <label>Story Name</label>
+            <input type="text"  formControlName="storyName" />
+            <label>Story Points</label>
+            <input type="number"   formControlName="storyPoints" />
+            <label>Story Description</label>
+            <input type="text"  formControlName="storyDescription" />
+          <button  class="butt-style"[disabled]="storyForm.invalid"  mat-raised-button color="primary" type="submit">Add Story</button>
+    </form>
+
+</div>

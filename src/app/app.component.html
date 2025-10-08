@@ -1,58 +1,9 @@
-<mat-tab-group [(selectedIndex)]="activeTabIndex" (selectedIndexChange)="switchTab($event)">
-  <!-- Form A -->
-  <mat-tab label="Form A">
-    <ng-container *ngIf="formA">
-      <form [formGroup]="formA" (ngSubmit)="submitFormA()" class="form-container">
-        <div *ngFor="let field of formAConfig; trackBy: trackByFn">
-          <ng-container [ngSwitch]="field.type">
-            <mat-form-field *ngSwitchCase="'text'" appearance="outline" class="full-width">
-              <mat-label>{{ field.label }}</mat-label>
-              <input matInput [formControlName]="field.name" />
-            </mat-form-field>
-            <mat-form-field *ngSwitchCase="'email'" appearance="outline" class="full-width">
-              <mat-label>{{ field.label }}</mat-label>
-              <input matInput type="email" [formControlName]="field.name" />
-            </mat-form-field>
-            <mat-form-field *ngSwitchCase="'password'" appearance="outline" class="full-width">
-              <mat-label>{{ field.label }}</mat-label>
-              <input matInput type="password" [formControlName]="field.name" />
-            </mat-form-field>
-            <mat-checkbox *ngSwitchCase="'checkbox'" [formControlName]="field.name">
-              {{ field.label }}
-            </mat-checkbox>
-          </ng-container>
-        </div>
+<div>
+  <button routerLink="./viewStory">View Stories </button>
+  <button routerLink="./calculator">View Calculator </button>
+  <button routerLink="./">Add Stories </button>
 
-        <button [disabled]="formA.invalid"  mat-raised-button color="primary" type="submit">Add & Subscribe</button>
-      </form>
-    </ng-container>
-  </mat-tab>
+</div>
 
-  <!-- Form B -->
-  <mat-tab label="Form B">
-    <ng-container *ngIf="formB">
-      <form [formGroup]="formB" (ngSubmit)="submitFormB()" class="form-container">
-        <div *ngFor="let field of formBConfig; trackBy: trackByFn">
-          <ng-container [ngSwitch]="field.type">
-            <mat-form-field *ngSwitchCase="'text'" appearance="outline" class="full-width">
-              <mat-label>{{ field.label }}</mat-label>
-              <input matInput [formControlName]="field.name" />
-            </mat-form-field>
-            <mat-form-field *ngSwitchCase="'email'" appearance="outline" class="full-width">
-              <mat-label>{{ field.label }}</mat-label>
-              <input matInput type="email" [formControlName]="field.name" />
-            </mat-form-field>
-            <mat-form-field *ngSwitchCase="'password'" appearance="outline" class="full-width">
-              <mat-label>{{ field.label }}</mat-label>
-              <input matInput type="password" [formControlName]="field.name" />
-            </mat-form-field>
-            <mat-checkbox *ngSwitchCase="'checkbox'" [formControlName]="field.name">
-              {{ field.label }}
-            </mat-checkbox>
-          </ng-container>
-        </div>
-        <button [disabled]="formB.invalid" mat-raised-button color="accent" type="submit">Login</button>
-      </form>
-    </ng-container>
-  </mat-tab>
-</mat-tab-group>
+
+<router-outlet></router-outlet>
